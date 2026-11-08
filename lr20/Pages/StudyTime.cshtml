@@ -1,0 +1,30 @@
+@page
+@model lr20.Pages.StudyTimeModel
+@{
+    ViewData["Title"] = "Тривалість навчання";
+}
+
+<h2>Калькулятор тривалості навчання</h2>
+
+<form method="post" class="mt-4">
+    <div class="mb-3">
+        <label>Загальний обсяг курсу в годинах:</label>
+        <input type="number" name="TotalHours" min="1" class="form-control" required />
+    </div>
+
+    <div class="mb-3">
+        <label>Годин на тиждень, які студент готовий приділяти:</label>
+        <input type="number" name="HoursPerWeek" min="1" class="form-control" required />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Обчислити</button>
+</form>
+
+<hr />
+
+@if (!string.IsNullOrEmpty(Model.ResultMessage))
+{
+    <div class="alert alert-success">
+        @Model.ResultMessage
+    </div>
+}

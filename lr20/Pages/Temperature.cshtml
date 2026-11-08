@@ -1,0 +1,25 @@
+@page
+@model lr20.Pages.TemperatureModel
+@{
+    ViewData["Title"] = "Температура";
+}
+
+<h2>Конвертер температури (°C → °F)</h2>
+
+<form method="post" class="mt-4">
+    <div class="mb-3">
+        <label>Температура в градусах Цельсія:</label>
+        <input type="number" step="any" name="CelsiusInput" class="form-control" required />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Конвертувати</button>
+</form>
+
+<hr />
+
+@if (!string.IsNullOrEmpty(Model.ResultMessage))
+{
+    <div class="alert alert-success">
+        @Model.ResultMessage
+    </div>
+}

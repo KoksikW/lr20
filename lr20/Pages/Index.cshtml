@@ -1,0 +1,10 @@
+@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Головна";
+}
+
+<div class="text-center">
+    <h1 class="display-4">@ViewData["Message"]</h1>
+    <p>Ви відкрили цю сторінку о <strong>@Model.CurrentTime</strong></p>
+</div>
